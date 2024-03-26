@@ -1,0 +1,3 @@
+C:/Users/jazzl/CLionProjects/objekt_projekt/cmake-build-debug/CMakeFiles/objekt_projekt.dir
+C:/Users/jazzl/CLionProjects/objekt_projekt/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/jazzl/CLionProjects/objekt_projekt/cmake-build-debug/CMakeFiles/rebuild_cache.dir
