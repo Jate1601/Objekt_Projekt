@@ -7,4 +7,7 @@ add_executable(objekt_projekt main.cpp
         Support/appConfig.h
         Support/support.h
         Support/findWidthAndHeight.h
+        Maze/maze.h
+        Maze/maze.cpp
+        Support/findWidthAndHeight.cpp
 )
