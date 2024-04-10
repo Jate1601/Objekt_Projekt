@@ -10,10 +10,7 @@
 #include <string>
 #include "../Maze/maze.h"
 
-/**
- * Find the defaultWidth and defaultHeight of the input-> Seperated by an x or a blank space->
- * @param input string entered by the user
- */
-void findWidthAndHeight(std::string *input, Maze *maze);
+
+std::vector<size_t> findWidthAndHeight(std::string *input);
 
 #endif //OBJEKT_PROJEKT_FINDWIDTHANDHEIGHT_H

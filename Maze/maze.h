@@ -5,7 +5,8 @@
 #ifndef OBJEKT_PROJEKT_MAZE_H
 #define OBJEKT_PROJEKT_MAZE_H
 
-//#include<iostream>
+#include <iostream>
+#include <string>
 #include <vector>
 
 class Maze {
@@ -14,45 +15,31 @@ public:
 
     Maze(size_t width, size_t height);
 
-    //Maze(const std::string fileName);
+    void display();
 
-    ~Maze();
-
-    void print();
-
-    void solve();
-
-    void generate();
-
-    void set_dimension(size_t width, size_t height);
-
-    const size_t get_height() {
-        return this->height;
-    }
-
-    const size_t get_width() {
-        return this->width;
-    }
+    void setPoints();
 
 private:
-    size_t width, height;
-
     struct Node {
-        bool visited = false;
-        bool topWall = true;
-        bool bottomWall = true;
-        bool leftWall = true;
-        bool rightWall = true;
-        int x, y;
+        Node();
 
-        Node(int x, int y) : x(x), y(y) {};
+        Node(int x, int y);
+
+        bool start = false;
+        bool end = false;
+
+        bool isWall = true;
+        int x;
+        int y;
+        std::vector<int> neighbours;
     };
 
-    std::vector<std::vector<Node>> grid;
-    Node *start;
-    Node *end;
+    size_t width;
+    size_t height;
 
-    void initializeGrid();
+    std::vector<std::vector<Node>> grid;
+
+    void init_grid();
 };
 
 #endif //OBJEKT_PROJEKT_MAZE_H
