@@ -17,29 +17,33 @@ public:
 
     void display();
 
-    void setPoints();
-
 private:
     struct Node {
         Node();
 
         Node(int x, int y);
 
-        bool start = false;
-        bool end = false;
+        bool visited;
 
         bool isWall = true;
-        int x;
-        int y;
+        int x, y;
         std::vector<int> neighbours;
     };
 
-    size_t width;
-    size_t height;
+    size_t width, height;
 
     std::vector<std::vector<Node>> grid;
 
+    Node *startingNode = nullptr;
+    Node *endNode = nullptr;
+
     void init_grid();
+
+    void generateMazeDFS();
+
+    void setPoints();
+
+
 };
 
 #endif //OBJEKT_PROJEKT_MAZE_H

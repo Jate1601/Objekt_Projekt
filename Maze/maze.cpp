@@ -2,6 +2,7 @@
 // Created by Dodo on 2024-03-27.
 //
 
+#include <stack>
 #include "Maze.h"
 #include "../Support/appConfig.h"
 
@@ -31,26 +32,70 @@ Maze::Maze(size_t width, size_t height) {
 
 /**
  * Initializes the grid.
- * If user entered 5x5, grid is generated for 7x7 but the size for the actual maze remains 5x5
  */
 void Maze::init_grid() {
-    this->grid = std::vector<std::vector<Node>>(this->height, std::vector<Node>(width));
-    //this->grid[0][1].start = true;
-    //this->grid[6][5].end = true;
+    this->grid.clear();
+    for (int y = 0; y < this->height; ++y) {
+        std::vector<Node> row;
+        for (int x = 0; x < this->width; ++x) {
+            row.push_back(Node(x, y));
+        }
+        this->grid.push_back(row);
+    }
 }
+
+
+/**
+ * Generate the Maze using DFS
+ */
+/*
+void Maze::generateMazeDFS() {
+   // Make sure all the nodes are set to non-visited
+   for (auto &row: this->grid) {
+       for (auto &node: row) {
+           node.visited = false;
+       }
+   }
+
+   // Start DFS from the start point, this has been randomized already, it coheres with DFS
+   std::stack<Node *> stack;
+   Node *current = startingNode;
+   current->visited = true;
+   stack.push(current);
+
+   while (!stack.empty()) {
+       current = stack.top();
+       auto neighbours = getUnvisitedNeighbours(current);
+
+       if (!neighbours.empty()) {
+           Node *next = chooseRandomNeighbour(neighbours);
+           removeWall(current, next);
+
+           next->visited = true;
+           stack.push(next);
+       } else {
+           stack.pop();
+       }
+   }
+
+}*/
+
 
 /**
  * Print the maze
  */
 void Maze::display() {
+    if (startingNode == nullptr) {
+        throw std::runtime_error("Maze is empty, nothing to display");
+    }
     std::cout << "\n\n";
-    for (int y = 0; y < this->height; ++y) {
-        for (int x = 0; x < this->width; ++x) {
-            if (grid[y][x].start) {
+    for (auto &row: this->grid) {
+        for (auto &node: row) {
+            if (&node == startingNode) {
                 std::cout << "S";
-            } else if (grid[y][x].end) {
+            } else if (&node == endNode) {
                 std::cout << "E";
-            } else if (grid[y][x].isWall) {
+            } else if (node.isWall) {
                 std::cout << "#"; // The walls are : "#"
             } else {
                 std::cout << " "; // The paths are : " "
@@ -58,63 +103,56 @@ void Maze::display() {
         }
         std::cout << "\n";
     }
-    std::cout << "\n\n";
 }
 
 /**
  * Set the start and end of the maze
  */
 void Maze::setPoints() {
-    size_t height = this->height - 2; // Remove 3. 2 for the walls and 1 for the zero index
-    size_t width = this->width - 2;
-
     size_t startSide = rand() % 4; // Random side, 0 = top, 1 = right, 2 = bottom, 3 = left
-
     size_t endSide = rand() % 4; // Ensures the endSide to be different from the startSide
     while (endSide == startSide) {
         endSide = rand() % 4;
     }
 
-
     size_t startPos;
     size_t endPos;
 
     if (startSide % 2 == 0) {
-        startPos = 1 + rand() % width;
+        startPos = 1 + rand() % (this->width - 2);
     } else {
-        startPos = 1 + rand() % height;
+        startPos = 1 + rand() % (this->height - 2);
     }
 
     if (endSide % 2 == 0) {
-        endPos = 1 + rand() % width;
+        endPos = 1 + rand() % (this->width - 2);
     } else {
-        endPos = 1 + rand() % height;
+        endPos = 1 + rand() % (this->height - 2);
     }
 
     if (startSide == 0) {
-        this->grid[0][startPos].start = true;
+        startingNode = &this->grid[0][startPos];
     } else if (startSide == 1) {
-        this->grid[startPos][this->width - 1].start = true;
+        startingNode = &this->grid[startPos][this->width - 1];
     } else if (startSide == 2) {
-        this->grid[this->height - 1][startPos].start = true;
+        startingNode = &this->grid[this->height - 1][startPos];
     } else if (startSide == 3) {
-        this->grid[startPos][0].start = true;
+        startingNode = &this->grid[startPos][0];
     } else {
         throw std::runtime_error("Incorrect starting placement");
     }
 
     if (endSide == 0) {
-        this->grid[0][endPos].end = true;
+        endNode = &this->grid[0][endPos];
     } else if (endSide == 1) {
-        this->grid[endPos][this->width - 1].end = true;
+        endNode = &this->grid[endPos][this->width - 1];
     } else if (endSide == 2) {
-        this->grid[this->height - 1][endPos].end = true;
+        endNode = &this->grid[this->height - 1][endPos];
     } else if (endSide == 3) {
-        this->grid[endPos][0].end = true;
+        endNode = &this->grid[endPos][0];
     } else {
         throw std::runtime_error("Incorrect ending placement");
     }
-
 }
 
 /**
@@ -123,6 +161,7 @@ void Maze::setPoints() {
 Maze::Node::Node() {
     this->x = 0;
     this->y = 0;
+    this->visited = false;
 }
 
 /**
@@ -133,4 +172,5 @@ Maze::Node::Node() {
 Maze::Node::Node(int x, int y) {
     this->x = x;
     this->y = y;
+    this->visited = false;
 }
