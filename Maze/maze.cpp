@@ -151,10 +151,15 @@ void Maze::display() {
         // Display the bottom walls if there is no connection to the bottom neighbor
         std::cout << "+"; // Start the line for bottom walls
         for (int x = 0; x < width; x++) {
-            if (y < height - 1 && !isConnected(&grid[y][x], &grid[y + 1][x])) {
-                std::cout << "--+";
+            // Ensure bottom row always has a full wall, regardless of connections
+            if (y < height - 1) {
+                if (!isConnected(&grid[y][x], &grid[y + 1][x])) {
+                    std::cout << "--+";
+                } else {
+                    std::cout << "  +";
+                }
             } else {
-                std::cout << "  +";
+                std::cout << "--+"; // Always print full walls for the bottom-most row
             }
         }
         std::cout << "\n";
