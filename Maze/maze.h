@@ -19,9 +19,6 @@ public:
 
     ~Maze();
 
-    void display();
-
-private:
     struct Node {
         Node();
 
@@ -33,6 +30,13 @@ private:
         int x, y;
     };
 
+    void display();
+
+    Node *getStartingNode();
+
+    Node *getEndNode();
+
+private:
     size_t width, height;
 
     std::vector<std::vector<Node>> grid;

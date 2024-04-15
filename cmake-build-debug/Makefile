@@ -152,6 +152,30 @@ Maze/maze.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\objekt_projekt.dir\build.make CMakeFiles/objekt_projekt.dir/Maze/maze.cpp.s
 .PHONY : Maze/maze.cpp.s
 
+Solver/DFSSolver.obj: Solver/DFSSolver.cpp.obj
+.PHONY : Solver/DFSSolver.obj
+
+# target to build an object file
+Solver/DFSSolver.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\objekt_projekt.dir\build.make CMakeFiles/objekt_projekt.dir/Solver/DFSSolver.cpp.obj
+.PHONY : Solver/DFSSolver.cpp.obj
+
+Solver/DFSSolver.i: Solver/DFSSolver.cpp.i
+.PHONY : Solver/DFSSolver.i
+
+# target to preprocess a source file
+Solver/DFSSolver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\objekt_projekt.dir\build.make CMakeFiles/objekt_projekt.dir/Solver/DFSSolver.cpp.i
+.PHONY : Solver/DFSSolver.cpp.i
+
+Solver/DFSSolver.s: Solver/DFSSolver.cpp.s
+.PHONY : Solver/DFSSolver.s
+
+# target to generate assembly for a file
+Solver/DFSSolver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\objekt_projekt.dir\build.make CMakeFiles/objekt_projekt.dir/Solver/DFSSolver.cpp.s
+.PHONY : Solver/DFSSolver.cpp.s
+
 Support/findWidthAndHeight.obj: Support/findWidthAndHeight.cpp.obj
 .PHONY : Support/findWidthAndHeight.obj
 
@@ -212,6 +236,9 @@ help:
 	@echo ... Maze/maze.obj
 	@echo ... Maze/maze.i
 	@echo ... Maze/maze.s
+	@echo ... Solver/DFSSolver.obj
+	@echo ... Solver/DFSSolver.i
+	@echo ... Solver/DFSSolver.s
 	@echo ... Support/findWidthAndHeight.obj
 	@echo ... Support/findWidthAndHeight.i
 	@echo ... Support/findWidthAndHeight.s

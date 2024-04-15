@@ -10,4 +10,6 @@ add_executable(objekt_projekt main.cpp
         Maze/maze.h
         Maze/maze.cpp
         Support/findWidthAndHeight.cpp
+        Solver/DFSSolver.cpp
+        Solver/DFSSolver.h
 )

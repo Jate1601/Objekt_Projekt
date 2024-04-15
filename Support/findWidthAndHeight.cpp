@@ -2,8 +2,7 @@
 // Created by Dodo on 2024-03-28.
 //
 
-#include "../Maze/maze.h"
-#include "support.h"
+#include "findWidthAndHeight.h"
 
 /**
  * Find the defaultWidth and defaultHeight of the input-> Seperated by an x or a blank space->
@@ -25,5 +24,6 @@ std::vector<size_t> findWidthAndHeight(std::string *input) {
     // Convert and set the defaultWidth and defaultHeight
     size_t width = std::stoi(widthStr);
     size_t height = std::stoi(heightStr);
+
     return std::vector<size_t>{width, height};
 }

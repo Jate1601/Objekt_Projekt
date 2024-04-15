@@ -173,4 +173,6 @@ CMakeFiles/objekt_projekt.dir/main.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_algorithm_defs.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/execution_defs.h \
  C:\Users\Dodo\CLionProjects\Objekt_Projekt\Maze/maze.h \
+ C:\Users\Dodo\CLionProjects\Objekt_Projekt\Solver/DFSSolver.h \
+ C:/Users/Dodo/CLionProjects/Objekt_Projekt/Maze/maze.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ctime

@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/objekt_projekt.dir/Maze/maze.cpp.obj"
   "CMakeFiles/objekt_projekt.dir/Maze/maze.cpp.obj.d"
+  "CMakeFiles/objekt_projekt.dir/Solver/DFSSolver.cpp.obj"
+  "CMakeFiles/objekt_projekt.dir/Solver/DFSSolver.cpp.obj.d"
   "CMakeFiles/objekt_projekt.dir/Support/findWidthAndHeight.cpp.obj"
   "CMakeFiles/objekt_projekt.dir/Support/findWidthAndHeight.cpp.obj.d"
   "CMakeFiles/objekt_projekt.dir/main.cpp.obj"

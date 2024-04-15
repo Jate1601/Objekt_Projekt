@@ -88,6 +88,12 @@
 		<Unit filename="C:/Users/Dodo/CLionProjects/Objekt_Projekt/Maze/maze.h">
 			<Option target="objekt_projekt"/>
 		</Unit>
+		<Unit filename="C:/Users/Dodo/CLionProjects/Objekt_Projekt/Solver/DFSSolver.cpp">
+			<Option target="objekt_projekt"/>
+		</Unit>
+		<Unit filename="C:/Users/Dodo/CLionProjects/Objekt_Projekt/Solver/DFSSolver.h">
+			<Option target="objekt_projekt"/>
+		</Unit>
 		<Unit filename="C:/Users/Dodo/CLionProjects/Objekt_Projekt/Support/appConfig.h">
 			<Option target="objekt_projekt"/>
 		</Unit>

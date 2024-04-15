@@ -17,15 +17,13 @@ Maze::Maze() {
 }
 
 /**
- * Constructor for the Maze with the passed width and height, //adds 2 to the size for the walls//
+ * Constructor for the Maze with the passed width and height,
  * @param width width of the Maze
  * @param height height of the Maze
  */
 Maze::Maze(size_t width, size_t height) {
-    //this->height = height + 2;
     this->height = height;
 
-    //this->width = width + 2;
     this->width = width;
 
     this->init_grid();
@@ -63,7 +61,6 @@ void Maze::generateMazeDFS() {
         auto neighbors = getAdjacentNodes(current);
         std::vector<Node *> unvisitedNeighbors;
 
-        // Filter unvisited neighbors
         for (Node *neighbor: neighbors) {
             if (!neighbor->visited) {
                 unvisitedNeighbors.push_back(neighbor);
@@ -71,7 +68,7 @@ void Maze::generateMazeDFS() {
         }
 
         if (!unvisitedNeighbors.empty()) {
-            Node *next = randAdjacentNode(unvisitedNeighbors); // This should use the filtered unvisited list
+            Node *next = randAdjacentNode(unvisitedNeighbors);
             remove_wall(current, next);
             next->visited = true;
             stack.push(next);
@@ -79,6 +76,14 @@ void Maze::generateMazeDFS() {
             stack.pop();
         }
     }
+
+    // Set all the nodes to unvisited for the Maze solver
+    for (int y = 0; y < this->height; ++y) {
+        for (int x = 0; x < this->width; ++x) {
+            this->grid[y][x].visited = false;
+        }
+    }
+
 }
 
 
@@ -227,15 +232,22 @@ void Maze::remove_wall(Maze::Node *from, Maze::Node *to) {
 /**
  * Deconstructor of Maze
  */
-Maze::~Maze() {
-    for (auto &row: grid) {
-        for (auto &node: row) {
-            node.neighbours.clear();
-            node.y = NULL;
-            node.x = NULL;
-            node.visited = NULL;
-        }
-    }
+Maze::~Maze() = default;
+
+/**
+ * Getter method of the starting node
+ * @return the starting node
+ */
+Maze::Node *Maze::getStartingNode() {
+    return this->startingNode;
+}
+
+/**
+ * Getter method of the end node
+ * @return the end node
+ */
+Maze::Node *Maze::getEndNode() {
+    return this->endNode;
 }
 
 /**
