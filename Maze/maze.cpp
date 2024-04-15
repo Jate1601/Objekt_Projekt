@@ -166,11 +166,15 @@ void Maze::display() {
     }
 }
 
-// Helper function to check if two nodes are connected
+/**
+ * Check of the two nodes are neighbours.
+ * @param n1 first node
+ * @param n2 second node
+ * @return true if neighbours, false if not
+ */
 bool Maze::isConnected(Node *n1, Node *n2) {
     return std::find(n1->neighbours.begin(), n1->neighbours.end(), n2) != n1->neighbours.end();
 }
-
 
 /**
  * Set the start and end of the maze
@@ -184,7 +188,6 @@ void Maze::setPoints() {
 
     size_t startPos = rand() % ((startSide % 2 == 0) ? this->width : this->height);
     size_t endPos = rand() % ((endSide % 2 == 0) ? this->width : this->height);
-
 
     if (startSide == 0) {
         startingNode = &this->grid[0][startPos];
@@ -220,7 +223,6 @@ void Maze::remove_wall(Maze::Node *from, Maze::Node *to) {
     from->neighbours.push_back(to);
     to->neighbours.push_back(from);
 }
-
 
 /**
  * Default constructor for Node

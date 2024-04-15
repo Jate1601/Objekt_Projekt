@@ -45,13 +45,13 @@ private:
     void generateMazeDFS();
 
 
-    Node *randAdjacentNode(std::vector<Node *> &);
+    static Node *randAdjacentNode(std::vector<Node *> &);
 
     std::vector<Node *> getAdjacentNodes(Node *current);
 
-    void remove_wall(Node *from, Node *to);
+    static void remove_wall(Node *from, Node *to);
 
-    bool isConnected(Node *, Node *);
+    static bool isConnected(Node *, Node *);
 };
 
 #endif //OBJEKT_PROJEKT_MAZE_H
