@@ -10,7 +10,6 @@
  * Default constructor for the Maze. Sets the size to 5x5 (defined in appConfig)
  */
 Maze::Maze() {
-    //TODO add walls
     this->height = defaultHeight;
     this->width = defaultWidth;
 
@@ -18,16 +17,20 @@ Maze::Maze() {
 }
 
 /**
- * Constructor for the Maze with the passed width and height, adds 2 to the size for the walls
+ * Constructor for the Maze with the passed width and height, //adds 2 to the size for the walls//
  * @param width width of the Maze
  * @param height height of the Maze
  */
 Maze::Maze(size_t width, size_t height) {
-    this->height = height + 2;
-    this->width = width + 2;
+    //this->height = height + 2;
+    this->height = height;
+
+    //this->width = width + 2;
+    this->width = width;
 
     this->init_grid();
     this->setPoints();
+    this->generateMazeDFS();
 }
 
 /**
@@ -38,7 +41,8 @@ void Maze::init_grid() {
     for (int y = 0; y < this->height; ++y) {
         std::vector<Node> row;
         for (int x = 0; x < this->width; ++x) {
-            row.push_back(Node(x, y));
+            Node node(x, y);
+            row.push_back(node);
         }
         this->grid.push_back(row);
     }
@@ -48,62 +52,120 @@ void Maze::init_grid() {
 /**
  * Generate the Maze using DFS
  */
-/*
 void Maze::generateMazeDFS() {
-   // Make sure all the nodes are set to non-visited
-   for (auto &row: this->grid) {
-       for (auto &node: row) {
-           node.visited = false;
-       }
-   }
+    std::stack<Node *> stack;
+    startingNode->visited = true;
+    stack.push(startingNode);
 
-   // Start DFS from the start point, this has been randomized already, it coheres with DFS
-   std::stack<Node *> stack;
-   Node *current = startingNode;
-   current->visited = true;
-   stack.push(current);
+    while (!stack.empty()) {
+        Node *current = stack.top();
+        current->visited = true;
+        auto neighbors = getAdjacentNodes(current);
+        std::vector<Node *> unvisitedNeighbors;
 
-   while (!stack.empty()) {
-       current = stack.top();
-       auto neighbours = getUnvisitedNeighbours(current);
+        // Filter unvisited neighbors
+        for (Node *neighbor: neighbors) {
+            if (!neighbor->visited) {
+                unvisitedNeighbors.push_back(neighbor);
+            }
+        }
 
-       if (!neighbours.empty()) {
-           Node *next = chooseRandomNeighbour(neighbours);
-           removeWall(current, next);
+        if (!unvisitedNeighbors.empty()) {
+            Node *next = randAdjacentNode(unvisitedNeighbors); // This should use the filtered unvisited list
+            remove_wall(current, next);
+            next->visited = true;
+            stack.push(next);
+        } else {
+            stack.pop();
+        }
+    }
+}
 
-           next->visited = true;
-           stack.push(next);
-       } else {
-           stack.pop();
-       }
-   }
 
-}*/
+/**
+ * Get all the adjacent nodes coordinate wise
+ * @param current current node
+ * @return list of adjacent nodes
+ */
+std::vector<Maze::Node *> Maze::getAdjacentNodes(Maze::Node *current) {
+    std::vector<Node *> adjacent = {};
+    int x = current->x;
+    int y = current->y;
 
+    // Check left
+    if (x > 0) adjacent.push_back(&this->grid[y][x - 1]);
+    // Check Right
+    if (x < this->width - 1) adjacent.push_back(&this->grid[y][x + 1]);
+    // Check up
+    if (y > 0) adjacent.push_back(&this->grid[y - 1][x]);
+    // Check down
+    if (y < height - 1) adjacent.push_back(&this->grid[y + 1][x]);
+
+    return adjacent;
+}
+
+/**
+ * Get a random adjacent node
+ * @param nodes list of neighbours
+ * @return random neighbour
+ */
+Maze::Node *Maze::randAdjacentNode(std::vector<Maze::Node *> &nodes) {
+    if (nodes.empty()) {
+        throw std::runtime_error("No available neighbours to choose from.");
+    }
+    int index = rand() % nodes.size();
+    return nodes[index];
+}
 
 /**
  * Print the maze
  */
 void Maze::display() {
-    if (startingNode == nullptr) {
-        throw std::runtime_error("Maze is empty, nothing to display");
+    std::cout << "\n+"; // Start the top border
+    for (int x = 0; x < width; x++) {
+        std::cout << "--+"; // Top border of each cell
     }
-    std::cout << "\n\n";
-    for (auto &row: this->grid) {
-        for (auto &node: row) {
-            if (&node == startingNode) {
-                std::cout << "S";
-            } else if (&node == endNode) {
-                std::cout << "E";
-            } else if (node.isWall) {
-                std::cout << "#"; // The walls are : "#"
+    std::cout << "\n";
+
+    for (int y = 0; y < height; y++) {
+        std::cout << "|"; // Start the left border of the maze
+        for (int x = 0; x < width; x++) {
+            // Display start (S) or end (E) based on coordinates
+            if (startingNode->x == x && startingNode->y == y) {
+                std::cout << " S";
+            } else if (endNode->x == x && endNode->y == y) {
+                std::cout << " E";
             } else {
-                std::cout << " "; // The paths are : " "
+                std::cout << "  ";
+            }
+
+            // Display the right wall if there is no connection to the right neighbor
+            if (x < width - 1 && !isConnected(&grid[y][x], &grid[y][x + 1])) {
+                std::cout << "|";
+            } else {
+                std::cout << " ";
+            }
+        }
+        std::cout << "|\n"; // Right border of the maze
+
+        // Display the bottom walls if there is no connection to the bottom neighbor
+        std::cout << "+"; // Start the line for bottom walls
+        for (int x = 0; x < width; x++) {
+            if (y < height - 1 && !isConnected(&grid[y][x], &grid[y + 1][x])) {
+                std::cout << "--+";
+            } else {
+                std::cout << "  +";
             }
         }
         std::cout << "\n";
     }
 }
+
+// Helper function to check if two nodes are connected
+bool Maze::isConnected(Node *n1, Node *n2) {
+    return std::find(n1->neighbours.begin(), n1->neighbours.end(), n2) != n1->neighbours.end();
+}
+
 
 /**
  * Set the start and end of the maze
@@ -115,20 +177,9 @@ void Maze::setPoints() {
         endSide = rand() % 4;
     }
 
-    size_t startPos;
-    size_t endPos;
+    size_t startPos = rand() % ((startSide % 2 == 0) ? this->width : this->height);
+    size_t endPos = rand() % ((endSide % 2 == 0) ? this->width : this->height);
 
-    if (startSide % 2 == 0) {
-        startPos = 1 + rand() % (this->width - 2);
-    } else {
-        startPos = 1 + rand() % (this->height - 2);
-    }
-
-    if (endSide % 2 == 0) {
-        endPos = 1 + rand() % (this->width - 2);
-    } else {
-        endPos = 1 + rand() % (this->height - 2);
-    }
 
     if (startSide == 0) {
         startingNode = &this->grid[0][startPos];
@@ -154,6 +205,17 @@ void Maze::setPoints() {
         throw std::runtime_error("Incorrect ending placement");
     }
 }
+
+/**
+ * Remove the wall between two nodes
+ * @param from the original node
+ * @param to its neighbour
+ */
+void Maze::remove_wall(Maze::Node *from, Maze::Node *to) {
+    from->neighbours.push_back(to);
+    to->neighbours.push_back(from);
+}
+
 
 /**
  * Default constructor for Node

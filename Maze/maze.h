@@ -8,6 +8,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
+
 
 class Maze {
 public:
@@ -25,9 +27,8 @@ private:
 
         bool visited;
 
-        bool isWall = true;
+        std::vector<Node *> neighbours = {};
         int x, y;
-        std::vector<int> neighbours;
     };
 
     size_t width, height;
@@ -39,11 +40,18 @@ private:
 
     void init_grid();
 
-    void generateMazeDFS();
-
     void setPoints();
 
+    void generateMazeDFS();
 
+
+    Node *randAdjacentNode(std::vector<Node *> &);
+
+    std::vector<Node *> getAdjacentNodes(Node *current);
+
+    void remove_wall(Node *from, Node *to);
+
+    bool isConnected(Node *, Node *);
 };
 
 #endif //OBJEKT_PROJEKT_MAZE_H
