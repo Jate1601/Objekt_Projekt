@@ -11,8 +11,7 @@
  * maze using DFS.
  *
  * Written by Jazzley Termond, Jate1601
- * Aiming for a grade : C
- * @return
+ * Aiming for grade : C
  */
 int main() {
     bool cont = true;

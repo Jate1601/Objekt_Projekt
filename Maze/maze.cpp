@@ -46,7 +46,6 @@ void Maze::init_grid() {
     }
 }
 
-
 /**
  * Generate the Maze using DFS
  */
@@ -83,9 +82,7 @@ void Maze::generateMazeDFS() {
             this->grid[y][x].visited = false;
         }
     }
-
 }
-
 
 /**
  * Get all the adjacent nodes coordinate wise

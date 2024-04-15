@@ -17,11 +17,11 @@ std::vector<size_t> findWidthAndHeight(std::string *input) {
             return std::vector<size_t>{defaultWidth, defaultHeight};
         }
     }
-    // Extract the defaultWidth before the x and the defaultHeight after the x
+    // Extract the width before the x and the height after the x
     std::string widthStr = input->substr(0, xPos);
     std::string heightStr = input->substr(xPos + 1);
 
-    // Convert and set the defaultWidth and defaultHeight
+    // Convert and set the width and height
     size_t width = std::stoi(widthStr);
     size_t height = std::stoi(heightStr);
 
