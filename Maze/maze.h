@@ -17,6 +17,8 @@ public:
 
     Maze(size_t width, size_t height);
 
+    ~Maze();
+
     void display();
 
 private:

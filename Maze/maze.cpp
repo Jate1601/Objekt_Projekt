@@ -225,6 +225,20 @@ void Maze::remove_wall(Maze::Node *from, Maze::Node *to) {
 }
 
 /**
+ * Deconstructor of Maze
+ */
+Maze::~Maze() {
+    for (auto &row: grid) {
+        for (auto &node: row) {
+            node.neighbours.clear();
+            node.y = NULL;
+            node.x = NULL;
+            node.visited = NULL;
+        }
+    }
+}
+
+/**
  * Default constructor for Node
  */
 Maze::Node::Node() {
