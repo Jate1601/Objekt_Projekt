@@ -1,11 +1,19 @@
 #include <iostream>
 #include <string>
-
 #include "Support/support.h"
 #include "Maze/maze.h"
 #include "Solver/DFSSolver.h"
 #include <ctime>
 
+/**
+ * The core of the program.
+ * This project creates a maze using Deep First Search and also solves the generated
+ * maze using DFS.
+ *
+ * Written by Jazzley Termond, Jate1601
+ * Aiming for a grade : C
+ * @return
+ */
 int main() {
     bool cont = true;
     srand(time(NULL));
@@ -15,7 +23,8 @@ int main() {
         std::cout << "Please pick an option: "
                      "\n1.Generate and display a maze."
                      "\n2.Solve a generated maze."
-                     "\n3.Exit"
+                     "\n3.Clear the screen"
+                     "\n4.Exit"
                      "\nYour choice : ";
         int choice;
         std::cin >> choice;
@@ -28,7 +37,7 @@ int main() {
         switch (choice) {
             case 1:
                 std::cout
-                        << "To generate a new labyrinth, please enter its width x height (example 7 x 3).\nThe default is 5 x 5.\nInput : ";
+                        << "\nTo generate a new labyrinth, please enter its width x height (example 7 x 3).\nThe default is 5 x 5.\nInput : ";
                 std::getline(std::cin, input);
                 if (input.contains('-')) {
                     std::cout << "\nIncorrect input of negative number(s)!\n";
@@ -48,15 +57,15 @@ int main() {
                 }
                 break;
             case 3:
+                system("cls");
+                break;
+            case 4:
                 cont = false;
                 break;
             default:
                 break;
         }
-
         std::cout << "\n\n";
     }
-    system("PAUSE");
-
     return 0;
 }
