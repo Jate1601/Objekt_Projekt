@@ -47,9 +47,7 @@ int main() {
                 inputVec = findWidthAndHeight(&input);
                 incorrectInput = input.contains('-') || inputVec[0] <= 1 || inputVec[1] <= 1 || inputVec.empty() ||
                                  !input.contains(' ') && !input.contains('x');
-                if (input != "d") {
-
-
+                if (input != "d") { // Not default
                     while (incorrectInput) {
                         std::cout << "\nIncorrect input of number(s)!\nPlease enter a new width x height. : ";
                         std::getline(std::cin, input);
@@ -58,14 +56,14 @@ int main() {
                         incorrectInput = input.contains('-') || inputVec[0] <= 1 ||
                                          inputVec[1] <= 1 || inputVec.empty() ||
                                          !input.contains(' ') && !input.contains('x');
-                        if (input == "d") {
+                        if (input == "d") { // Default
                             inputVec[0] = defaultWidth;
                             inputVec[1] = defaultHeight;
                             incorrectInput = false;
                         }
                     }
                     maze = new Maze(inputVec[0], inputVec[1]);
-                } else {
+                } else { // Default
                     maze = new Maze();
                 }
                 maze->display();
@@ -87,7 +85,6 @@ int main() {
             default:
                 break;
         }
-        std::cout << "\n\n";
     }
     return 0;
 }

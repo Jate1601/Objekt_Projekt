@@ -207,6 +207,7 @@ void Maze::display() {
         }
         std::cout << "\n";
     }
+    std::cout << "\n\n";
 }
 
 /**

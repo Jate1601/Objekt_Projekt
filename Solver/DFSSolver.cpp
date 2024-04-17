@@ -48,5 +48,5 @@ void DFSSolver::displaySolution() const {
     for (const auto &node: solutionPath) {
         std::cout << "(" << node->x << ", " << node->y << ") ";
     }
-    std::cout << "\n";
+    std::cout << "\n\n";
 }

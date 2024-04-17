@@ -48,7 +48,6 @@ private:
 
     void generateMazeDFS();
 
-
     static Node *randAdjacentNode(std::vector<Node *> &);
 
     std::vector<Node *> getAdjacentNodes(Node *current);
