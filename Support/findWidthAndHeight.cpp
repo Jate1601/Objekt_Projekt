@@ -7,7 +7,8 @@
 #include "findWidthAndHeight.h"
 
 /**
- * Find the width and height of the input. Seperated by an x or a blank space
+ * Find the width and height of the input. Seperated by an x or a blank space.
+ * This method also deals with conversion error handling
  * @param input string entered by the user
  */
 std::vector<size_t> findWidthAndHeight(std::string *input) {
@@ -15,9 +16,7 @@ std::vector<size_t> findWidthAndHeight(std::string *input) {
     if (xPos == std::string::npos) {
         xPos = input->find(' ');
         if (xPos == std::string::npos) {
-            //std::cout << "\nIncorrect input! Using default settings->\n";
             return std::vector<size_t>{0, 0};
-
         }
     }
     // Extract the width before the x and the height after the x
@@ -30,10 +29,8 @@ std::vector<size_t> findWidthAndHeight(std::string *input) {
     try {
         width = std::stoi(widthStr);
         height = std::stoi(heightStr);
+        return std::vector<size_t>{width, height};
     } catch (std::invalid_argument const &ex) {
-        width = 0;
-        height = 0;
+        return std::vector<size_t>{0, 0};
     }
-
-    return std::vector<size_t>{width, height};
 }

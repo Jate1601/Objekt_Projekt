@@ -40,28 +40,34 @@ int main() {
 
         switch (choice) {
             case 1:
+                delete maze;
                 std::cout
-                        << "\nTo generate a new labyrinth, please enter its width x height (example 7 x 3).\nThe default is 5 x 5. A maze needs to have a width and/or height bigger than 1.\nInput : ";
+                        << "\nTo generate a new labyrinth, please enter its width x height (example 7 x 3).\nThe default(d) is 5 x 5. A maze needs to have a width and/or height bigger than 1.\nInput : ";
                 std::getline(std::cin, input);
                 inputVec = findWidthAndHeight(&input);
-                if (input.contains('-') || inputVec[0] <= 1 || inputVec[1] <= 1 || inputVec.empty() ||
-                    !input.contains(' ') && !input.contains('x'))
-                    incorrectInput = true;
+                incorrectInput = input.contains('-') || inputVec[0] <= 1 || inputVec[1] <= 1 || inputVec.empty() ||
+                                 !input.contains(' ') && !input.contains('x');
+                if (input != "d") {
 
-                while (incorrectInput) {
-                    std::cout << "\nIncorrect input of number(s)!\nPlease enter a new width x height. : ";
-                    std::getline(std::cin, input);
-                    inputVec.clear();
-                    inputVec = findWidthAndHeight(&input);
-                    if (!(input.contains('-') || inputVec[0] <= 1 ||
-                          inputVec[1] <= 1 || inputVec.empty() || !input.contains(' ') && !input.contains('x')))
-                        incorrectInput = false;
+
+                    while (incorrectInput) {
+                        std::cout << "\nIncorrect input of number(s)!\nPlease enter a new width x height. : ";
+                        std::getline(std::cin, input);
+                        inputVec.clear();
+                        inputVec = findWidthAndHeight(&input);
+                        incorrectInput = input.contains('-') || inputVec[0] <= 1 ||
+                                         inputVec[1] <= 1 || inputVec.empty() ||
+                                         !input.contains(' ') && !input.contains('x');
+                        if (input == "d") {
+                            inputVec[0] = defaultWidth;
+                            inputVec[1] = defaultHeight;
+                            incorrectInput = false;
+                        }
+                    }
+                    maze = new Maze(inputVec[0], inputVec[1]);
+                } else {
+                    maze = new Maze();
                 }
-
-                delete maze;
-                if (inputVec[0] == defaultWidth && inputVec[1] == defaultHeight) maze = new Maze();
-                else maze = new Maze(inputVec[0], inputVec[1]);
-
                 maze->display();
                 break;
             case 2:
@@ -83,6 +89,5 @@ int main() {
         }
         std::cout << "\n\n";
     }
-    system("PAUSE");
     return 0;
 }
