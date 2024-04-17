@@ -82,6 +82,10 @@ void Maze::setPoints() {
     } else if (endSide == 3) {
         endNode = &this->grid[endPos][0];
     }
+
+    if (startingNode->x == endNode->x && startingNode->y == endNode->y) {
+        setPoints(); // If they are set to the same node, recreate them
+    }
 }
 
 /**
