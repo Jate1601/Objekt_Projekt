@@ -3,7 +3,7 @@
  * Written for course : DT019G/DT026G.
  * Aiming for grade : C
  */
- 
+
 #include <iostream>
 #include <string>
 #include "Maze/maze.h"
@@ -36,17 +36,28 @@ int main() {
 
         std::string input;
         std::vector<size_t> inputVec = {};
+        bool incorrectInput = false;
 
         switch (choice) {
             case 1:
                 std::cout
                         << "\nTo generate a new labyrinth, please enter its width x height (example 7 x 3).\nThe default is 5 x 5. A maze needs to have a width and/or height bigger than 1.\nInput : ";
                 std::getline(std::cin, input);
-                while (input.contains('-')) {
-                    std::cout << "\nIncorrect input of negative number(s)!\nPlease enter a new width x height. : ";
-                    std::getline(std::cin, input);
-                }
                 inputVec = findWidthAndHeight(&input);
+                if (input.contains('-') || inputVec[0] <= 1 || inputVec[1] <= 1 || inputVec.empty() ||
+                    !input.contains(' ') && !input.contains('x'))
+                    incorrectInput = true;
+
+                while (incorrectInput) {
+                    std::cout << "\nIncorrect input of number(s)!\nPlease enter a new width x height. : ";
+                    std::getline(std::cin, input);
+                    inputVec.clear();
+                    inputVec = findWidthAndHeight(&input);
+                    if (!(input.contains('-') || inputVec[0] <= 1 ||
+                          inputVec[1] <= 1 || inputVec.empty() || !input.contains(' ') && !input.contains('x')))
+                        incorrectInput = false;
+                }
+
                 delete maze;
                 if (inputVec[0] == defaultWidth && inputVec[1] == defaultHeight) maze = new Maze();
                 else maze = new Maze(inputVec[0], inputVec[1]);
@@ -72,5 +83,6 @@ int main() {
         }
         std::cout << "\n\n";
     }
+    system("PAUSE");
     return 0;
 }
