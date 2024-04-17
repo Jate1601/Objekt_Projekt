@@ -1,7 +1,3 @@
-//
-// Created by Dodo on 2024-03-27.
-//
-
 #ifndef OBJEKT_PROJEKT_APPCONFIG_H
 #define OBJEKT_PROJEKT_APPCONFIG_H
 

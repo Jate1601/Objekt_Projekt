@@ -1,7 +1,3 @@
-//
-// Created by Dodo on 2024-03-27.
-//
-
 #ifndef OBJEKT_PROJEKT_MAZE_H
 #define OBJEKT_PROJEKT_MAZE_H
 
@@ -9,6 +5,8 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include "../Support/appConfig.h"
+#include <stack>
 
 
 class Maze {

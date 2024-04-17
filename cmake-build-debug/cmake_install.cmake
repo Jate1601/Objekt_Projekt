@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Dodo/CLionProjects/Objekt_Projekt
+# Install script for directory: C:/Users/jazzl/CLionProjects/Objekt_Projekt
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Dodo/CLionProjects/Objekt_Projekt/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/jazzl/CLionProjects/Objekt_Projekt/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

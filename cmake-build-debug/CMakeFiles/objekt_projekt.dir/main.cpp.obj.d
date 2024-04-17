@@ -1,5 +1,5 @@
 CMakeFiles/objekt_projekt.dir/main.cpp.obj: \
- C:\Users\Dodo\CLionProjects\Objekt_Projekt\main.cpp \
+ C:\Users\jazzl\CLionProjects\Objekt_Projekt\main.cpp \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -150,11 +150,7 @@ CMakeFiles/objekt_projekt.dir/main.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream.tcc \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
- C:\Users\Dodo\CLionProjects\Objekt_Projekt\Support/support.h \
- C:\Users\Dodo\CLionProjects\Objekt_Projekt\Support/appConfig.h \
- C:\Users\Dodo\CLionProjects\Objekt_Projekt\Support/findWidthAndHeight.h \
- C:\Users\Dodo\CLionProjects\Objekt_Projekt\Support/support.h \
- C:/Users/Dodo/CLionProjects/Objekt_Projekt/Maze/maze.h \
+ C:\Users\jazzl\CLionProjects\Objekt_Projekt\Maze/maze.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/vector \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_uninitialized.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_vector.h \
@@ -172,7 +168,14 @@ CMakeFiles/objekt_projekt.dir/main.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ranges_algobase.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_algorithm_defs.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/execution_defs.h \
- C:\Users\Dodo\CLionProjects\Objekt_Projekt\Maze/maze.h \
- C:\Users\Dodo\CLionProjects\Objekt_Projekt\Solver/DFSSolver.h \
- C:/Users/Dodo/CLionProjects/Objekt_Projekt/Maze/maze.h \
+ C:/Users/jazzl/CLionProjects/Objekt_Projekt/Support/appConfig.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/stack \
+ C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/deque \
+ C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_deque.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/deque.tcc \
+ C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_stack.h \
+ C:\Users\jazzl\CLionProjects\Objekt_Projekt\Solver/DFSSolver.h \
+ C:/Users/jazzl/CLionProjects/Objekt_Projekt/Maze/maze.h \
+ C:\Users\jazzl\CLionProjects\Objekt_Projekt\Support/findWidthAndHeight.h \
+ C:/Users/jazzl/CLionProjects/Objekt_Projekt/Maze/maze.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ctime

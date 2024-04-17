@@ -53,10 +53,10 @@ RM = "C:\Program Files\JetBrains\CLion 2023.3.4\bin\cmake\win\x64\bin\cmake.exe"
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Dodo\CLionProjects\Objekt_Projekt
+CMAKE_SOURCE_DIR = C:\Users\jazzl\CLionProjects\Objekt_Projekt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Dodo\CLionProjects\Objekt_Projekt\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\jazzl\CLionProjects\Objekt_Projekt\cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -80,14 +80,14 @@ clean: CMakeFiles/objekt_projekt.dir/clean
 CMakeFiles/objekt_projekt.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\objekt_projekt.dir\build.make CMakeFiles/objekt_projekt.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\objekt_projekt.dir\build.make CMakeFiles/objekt_projekt.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Dodo\CLionProjects\Objekt_Projekt\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5 "Built target objekt_projekt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\jazzl\CLionProjects\Objekt_Projekt\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5 "Built target objekt_projekt"
 .PHONY : CMakeFiles/objekt_projekt.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/objekt_projekt.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Dodo\CLionProjects\Objekt_Projekt\cmake-build-debug\CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\jazzl\CLionProjects\Objekt_Projekt\cmake-build-debug\CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/objekt_projekt.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Dodo\CLionProjects\Objekt_Projekt\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\jazzl\CLionProjects\Objekt_Projekt\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/objekt_projekt.dir/rule
 
 # Convenience name for target.

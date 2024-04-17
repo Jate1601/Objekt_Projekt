@@ -52,10 +52,10 @@ RM = "C:\Program Files\JetBrains\CLion 2023.3.4\bin\cmake\win\x64\bin\cmake.exe"
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Dodo\CLionProjects\Objekt_Projekt
+CMAKE_SOURCE_DIR = C:\Users\jazzl\CLionProjects\Objekt_Projekt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Dodo\CLionProjects\Objekt_Projekt\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\jazzl\CLionProjects\Objekt_Projekt\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/objekt_projekt.dir/depend.make
@@ -69,60 +69,60 @@ include CMakeFiles/objekt_projekt.dir/progress.make
 include CMakeFiles/objekt_projekt.dir/flags.make
 
 CMakeFiles/objekt_projekt.dir/main.cpp.obj: CMakeFiles/objekt_projekt.dir/flags.make
-CMakeFiles/objekt_projekt.dir/main.cpp.obj: C:/Users/Dodo/CLionProjects/Objekt_Projekt/main.cpp
+CMakeFiles/objekt_projekt.dir/main.cpp.obj: C:/Users/jazzl/CLionProjects/Objekt_Projekt/main.cpp
 CMakeFiles/objekt_projekt.dir/main.cpp.obj: CMakeFiles/objekt_projekt.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Dodo\CLionProjects\Objekt_Projekt\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/objekt_projekt.dir/main.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/objekt_projekt.dir/main.cpp.obj -MF CMakeFiles\objekt_projekt.dir\main.cpp.obj.d -o CMakeFiles\objekt_projekt.dir\main.cpp.obj -c C:\Users\Dodo\CLionProjects\Objekt_Projekt\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\jazzl\CLionProjects\Objekt_Projekt\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/objekt_projekt.dir/main.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/objekt_projekt.dir/main.cpp.obj -MF CMakeFiles\objekt_projekt.dir\main.cpp.obj.d -o CMakeFiles\objekt_projekt.dir\main.cpp.obj -c C:\Users\jazzl\CLionProjects\Objekt_Projekt\main.cpp
 
 CMakeFiles/objekt_projekt.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/objekt_projekt.dir/main.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Dodo\CLionProjects\Objekt_Projekt\main.cpp > CMakeFiles\objekt_projekt.dir\main.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\jazzl\CLionProjects\Objekt_Projekt\main.cpp > CMakeFiles\objekt_projekt.dir\main.cpp.i
 
 CMakeFiles/objekt_projekt.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/objekt_projekt.dir/main.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Dodo\CLionProjects\Objekt_Projekt\main.cpp -o CMakeFiles\objekt_projekt.dir\main.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\jazzl\CLionProjects\Objekt_Projekt\main.cpp -o CMakeFiles\objekt_projekt.dir\main.cpp.s
 
 CMakeFiles/objekt_projekt.dir/Maze/maze.cpp.obj: CMakeFiles/objekt_projekt.dir/flags.make
-CMakeFiles/objekt_projekt.dir/Maze/maze.cpp.obj: C:/Users/Dodo/CLionProjects/Objekt_Projekt/Maze/maze.cpp
+CMakeFiles/objekt_projekt.dir/Maze/maze.cpp.obj: C:/Users/jazzl/CLionProjects/Objekt_Projekt/Maze/maze.cpp
 CMakeFiles/objekt_projekt.dir/Maze/maze.cpp.obj: CMakeFiles/objekt_projekt.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Dodo\CLionProjects\Objekt_Projekt\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/objekt_projekt.dir/Maze/maze.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/objekt_projekt.dir/Maze/maze.cpp.obj -MF CMakeFiles\objekt_projekt.dir\Maze\maze.cpp.obj.d -o CMakeFiles\objekt_projekt.dir\Maze\maze.cpp.obj -c C:\Users\Dodo\CLionProjects\Objekt_Projekt\Maze\maze.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\jazzl\CLionProjects\Objekt_Projekt\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/objekt_projekt.dir/Maze/maze.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/objekt_projekt.dir/Maze/maze.cpp.obj -MF CMakeFiles\objekt_projekt.dir\Maze\maze.cpp.obj.d -o CMakeFiles\objekt_projekt.dir\Maze\maze.cpp.obj -c C:\Users\jazzl\CLionProjects\Objekt_Projekt\Maze\maze.cpp
 
 CMakeFiles/objekt_projekt.dir/Maze/maze.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/objekt_projekt.dir/Maze/maze.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Dodo\CLionProjects\Objekt_Projekt\Maze\maze.cpp > CMakeFiles\objekt_projekt.dir\Maze\maze.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\jazzl\CLionProjects\Objekt_Projekt\Maze\maze.cpp > CMakeFiles\objekt_projekt.dir\Maze\maze.cpp.i
 
 CMakeFiles/objekt_projekt.dir/Maze/maze.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/objekt_projekt.dir/Maze/maze.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Dodo\CLionProjects\Objekt_Projekt\Maze\maze.cpp -o CMakeFiles\objekt_projekt.dir\Maze\maze.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\jazzl\CLionProjects\Objekt_Projekt\Maze\maze.cpp -o CMakeFiles\objekt_projekt.dir\Maze\maze.cpp.s
 
 CMakeFiles/objekt_projekt.dir/Support/findWidthAndHeight.cpp.obj: CMakeFiles/objekt_projekt.dir/flags.make
-CMakeFiles/objekt_projekt.dir/Support/findWidthAndHeight.cpp.obj: C:/Users/Dodo/CLionProjects/Objekt_Projekt/Support/findWidthAndHeight.cpp
+CMakeFiles/objekt_projekt.dir/Support/findWidthAndHeight.cpp.obj: C:/Users/jazzl/CLionProjects/Objekt_Projekt/Support/findWidthAndHeight.cpp
 CMakeFiles/objekt_projekt.dir/Support/findWidthAndHeight.cpp.obj: CMakeFiles/objekt_projekt.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Dodo\CLionProjects\Objekt_Projekt\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/objekt_projekt.dir/Support/findWidthAndHeight.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/objekt_projekt.dir/Support/findWidthAndHeight.cpp.obj -MF CMakeFiles\objekt_projekt.dir\Support\findWidthAndHeight.cpp.obj.d -o CMakeFiles\objekt_projekt.dir\Support\findWidthAndHeight.cpp.obj -c C:\Users\Dodo\CLionProjects\Objekt_Projekt\Support\findWidthAndHeight.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\jazzl\CLionProjects\Objekt_Projekt\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/objekt_projekt.dir/Support/findWidthAndHeight.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/objekt_projekt.dir/Support/findWidthAndHeight.cpp.obj -MF CMakeFiles\objekt_projekt.dir\Support\findWidthAndHeight.cpp.obj.d -o CMakeFiles\objekt_projekt.dir\Support\findWidthAndHeight.cpp.obj -c C:\Users\jazzl\CLionProjects\Objekt_Projekt\Support\findWidthAndHeight.cpp
 
 CMakeFiles/objekt_projekt.dir/Support/findWidthAndHeight.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/objekt_projekt.dir/Support/findWidthAndHeight.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Dodo\CLionProjects\Objekt_Projekt\Support\findWidthAndHeight.cpp > CMakeFiles\objekt_projekt.dir\Support\findWidthAndHeight.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\jazzl\CLionProjects\Objekt_Projekt\Support\findWidthAndHeight.cpp > CMakeFiles\objekt_projekt.dir\Support\findWidthAndHeight.cpp.i
 
 CMakeFiles/objekt_projekt.dir/Support/findWidthAndHeight.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/objekt_projekt.dir/Support/findWidthAndHeight.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Dodo\CLionProjects\Objekt_Projekt\Support\findWidthAndHeight.cpp -o CMakeFiles\objekt_projekt.dir\Support\findWidthAndHeight.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\jazzl\CLionProjects\Objekt_Projekt\Support\findWidthAndHeight.cpp -o CMakeFiles\objekt_projekt.dir\Support\findWidthAndHeight.cpp.s
 
 CMakeFiles/objekt_projekt.dir/Solver/DFSSolver.cpp.obj: CMakeFiles/objekt_projekt.dir/flags.make
-CMakeFiles/objekt_projekt.dir/Solver/DFSSolver.cpp.obj: C:/Users/Dodo/CLionProjects/Objekt_Projekt/Solver/DFSSolver.cpp
+CMakeFiles/objekt_projekt.dir/Solver/DFSSolver.cpp.obj: C:/Users/jazzl/CLionProjects/Objekt_Projekt/Solver/DFSSolver.cpp
 CMakeFiles/objekt_projekt.dir/Solver/DFSSolver.cpp.obj: CMakeFiles/objekt_projekt.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Dodo\CLionProjects\Objekt_Projekt\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/objekt_projekt.dir/Solver/DFSSolver.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/objekt_projekt.dir/Solver/DFSSolver.cpp.obj -MF CMakeFiles\objekt_projekt.dir\Solver\DFSSolver.cpp.obj.d -o CMakeFiles\objekt_projekt.dir\Solver\DFSSolver.cpp.obj -c C:\Users\Dodo\CLionProjects\Objekt_Projekt\Solver\DFSSolver.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\jazzl\CLionProjects\Objekt_Projekt\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/objekt_projekt.dir/Solver/DFSSolver.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/objekt_projekt.dir/Solver/DFSSolver.cpp.obj -MF CMakeFiles\objekt_projekt.dir\Solver\DFSSolver.cpp.obj.d -o CMakeFiles\objekt_projekt.dir\Solver\DFSSolver.cpp.obj -c C:\Users\jazzl\CLionProjects\Objekt_Projekt\Solver\DFSSolver.cpp
 
 CMakeFiles/objekt_projekt.dir/Solver/DFSSolver.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/objekt_projekt.dir/Solver/DFSSolver.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Dodo\CLionProjects\Objekt_Projekt\Solver\DFSSolver.cpp > CMakeFiles\objekt_projekt.dir\Solver\DFSSolver.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\jazzl\CLionProjects\Objekt_Projekt\Solver\DFSSolver.cpp > CMakeFiles\objekt_projekt.dir\Solver\DFSSolver.cpp.i
 
 CMakeFiles/objekt_projekt.dir/Solver/DFSSolver.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/objekt_projekt.dir/Solver/DFSSolver.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Dodo\CLionProjects\Objekt_Projekt\Solver\DFSSolver.cpp -o CMakeFiles\objekt_projekt.dir\Solver\DFSSolver.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\jazzl\CLionProjects\Objekt_Projekt\Solver\DFSSolver.cpp -o CMakeFiles\objekt_projekt.dir\Solver\DFSSolver.cpp.s
 
 # Object files for target objekt_projekt
 objekt_projekt_OBJECTS = \
@@ -142,7 +142,7 @@ objekt_projekt.exe: CMakeFiles/objekt_projekt.dir/build.make
 objekt_projekt.exe: CMakeFiles/objekt_projekt.dir/linkLibs.rsp
 objekt_projekt.exe: CMakeFiles/objekt_projekt.dir/objects1.rsp
 objekt_projekt.exe: CMakeFiles/objekt_projekt.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Dodo\CLionProjects\Objekt_Projekt\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable objekt_projekt.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\jazzl\CLionProjects\Objekt_Projekt\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable objekt_projekt.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\objekt_projekt.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -154,6 +154,6 @@ CMakeFiles/objekt_projekt.dir/clean:
 .PHONY : CMakeFiles/objekt_projekt.dir/clean
 
 CMakeFiles/objekt_projekt.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Dodo\CLionProjects\Objekt_Projekt C:\Users\Dodo\CLionProjects\Objekt_Projekt C:\Users\Dodo\CLionProjects\Objekt_Projekt\cmake-build-debug C:\Users\Dodo\CLionProjects\Objekt_Projekt\cmake-build-debug C:\Users\Dodo\CLionProjects\Objekt_Projekt\cmake-build-debug\CMakeFiles\objekt_projekt.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\jazzl\CLionProjects\Objekt_Projekt C:\Users\jazzl\CLionProjects\Objekt_Projekt C:\Users\jazzl\CLionProjects\Objekt_Projekt\cmake-build-debug C:\Users\jazzl\CLionProjects\Objekt_Projekt\cmake-build-debug C:\Users\jazzl\CLionProjects\Objekt_Projekt\cmake-build-debug\CMakeFiles\objekt_projekt.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/objekt_projekt.dir/depend
 

@@ -1,10 +1,10 @@
-//
-// Created by Dodo on 2024-03-27.
-//
+/**
+ * Written by Jazzley Termond, Jate1601.
+ * Written for course : DT019G/DT026G.
+ * Aiming for grade : C
+ */
 
-#include <stack>
 #include "Maze.h"
-#include "../Support/appConfig.h"
 
 /**
  * Default constructor for the Maze. Sets the size to 5x5 (defined in appConfig)
@@ -14,6 +14,8 @@ Maze::Maze() {
     this->width = defaultWidth;
 
     this->init_grid();
+    this->setPoints();
+    this->generateMazeDFS();
 }
 
 /**
@@ -23,7 +25,6 @@ Maze::Maze() {
  */
 Maze::Maze(size_t width, size_t height) {
     this->height = height;
-
     this->width = width;
 
     this->init_grid();
@@ -43,6 +44,43 @@ void Maze::init_grid() {
             row.push_back(node);
         }
         this->grid.push_back(row);
+    }
+}
+
+/**
+ * Set the start and end of the maze
+ */
+void Maze::setPoints() {
+    size_t startSide = rand() % 4; // Random side, 0 = top, 1 = right, 2 = bottom, 3 = left
+    while (startSide < 0 || startSide > 3) {
+        startSide = rand() % 4;
+    }
+    size_t endSide = rand() % 4; // Ensures the endSide to be different from the startSide
+    while (endSide == startSide || endSide < 0 || endSide > 3) {
+        endSide = rand() % 4;
+    }
+
+    size_t startPos = rand() % ((startSide % 2 == 0) ? this->width : this->height);
+    size_t endPos = rand() % ((endSide % 2 == 0) ? this->width : this->height);
+
+    if (startSide == 0) {
+        startingNode = &this->grid[0][startPos];
+    } else if (startSide == 1) {
+        startingNode = &this->grid[startPos][this->width - 1];
+    } else if (startSide == 2) {
+        startingNode = &this->grid[this->height - 1][startPos];
+    } else if (startSide == 3) {
+        startingNode = &this->grid[startPos][0];
+    }
+
+    if (endSide == 0) {
+        endNode = &this->grid[0][endPos];
+    } else if (endSide == 1) {
+        endNode = &this->grid[endPos][this->width - 1];
+    } else if (endSide == 2) {
+        endNode = &this->grid[this->height - 1][endPos];
+    } else if (endSide == 3) {
+        endNode = &this->grid[endPos][0];
     }
 }
 
@@ -112,11 +150,10 @@ std::vector<Maze::Node *> Maze::getAdjacentNodes(Maze::Node *current) {
  * @return random neighbour
  */
 Maze::Node *Maze::randAdjacentNode(std::vector<Maze::Node *> &nodes) {
-    if (nodes.empty()) {
+    if (nodes.empty()) { // This is already checked before calling randAdjacentNode
         throw std::runtime_error("No available neighbours to choose from.");
     }
-    int index = rand() % nodes.size();
-    return nodes[index];
+    return nodes[rand() % nodes.size()];
 }
 
 /**
@@ -169,7 +206,7 @@ void Maze::display() {
 }
 
 /**
- * Check of the two nodes are neighbours.
+ * Check if the two nodes are neighbours.
  * @param n1 first node
  * @param n2 second node
  * @return true if neighbours, false if not
@@ -178,43 +215,6 @@ bool Maze::isConnected(Node *n1, Node *n2) {
     return std::find(n1->neighbours.begin(), n1->neighbours.end(), n2) != n1->neighbours.end();
 }
 
-/**
- * Set the start and end of the maze
- */
-void Maze::setPoints() {
-    size_t startSide = rand() % 4; // Random side, 0 = top, 1 = right, 2 = bottom, 3 = left
-    size_t endSide = rand() % 4; // Ensures the endSide to be different from the startSide
-    while (endSide == startSide) {
-        endSide = rand() % 4;
-    }
-
-    size_t startPos = rand() % ((startSide % 2 == 0) ? this->width : this->height);
-    size_t endPos = rand() % ((endSide % 2 == 0) ? this->width : this->height);
-
-    if (startSide == 0) {
-        startingNode = &this->grid[0][startPos];
-    } else if (startSide == 1) {
-        startingNode = &this->grid[startPos][this->width - 1];
-    } else if (startSide == 2) {
-        startingNode = &this->grid[this->height - 1][startPos];
-    } else if (startSide == 3) {
-        startingNode = &this->grid[startPos][0];
-    } else {
-        throw std::runtime_error("Incorrect starting placement");
-    }
-
-    if (endSide == 0) {
-        endNode = &this->grid[0][endPos];
-    } else if (endSide == 1) {
-        endNode = &this->grid[endPos][this->width - 1];
-    } else if (endSide == 2) {
-        endNode = &this->grid[this->height - 1][endPos];
-    } else if (endSide == 3) {
-        endNode = &this->grid[endPos][0];
-    } else {
-        throw std::runtime_error("Incorrect ending placement");
-    }
-}
 
 /**
  * Remove the wall between two nodes
@@ -227,7 +227,7 @@ void Maze::remove_wall(Maze::Node *from, Maze::Node *to) {
 }
 
 /**
- * Deconstructor of Maze
+ * Deconstruct the Maze
  */
 Maze::~Maze() = default;
 

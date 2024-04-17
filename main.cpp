@@ -1,8 +1,14 @@
+/**
+ * Written by Jazzley Termond, Jate1601.
+ * Written for course : DT019G/DT026G.
+ * Aiming for grade : C
+ */
+ 
 #include <iostream>
 #include <string>
-#include "Support/support.h"
 #include "Maze/maze.h"
 #include "Solver/DFSSolver.h"
+#include "Support/findWidthAndHeight.h"
 #include <ctime>
 
 /**
@@ -10,8 +16,6 @@
  * This project creates a maze using Deep First Search and also solves the generated
  * maze using DFS.
  *
- * Written by Jazzley Termond, Jate1601
- * Aiming for grade : C
  */
 int main() {
     bool cont = true;
@@ -36,15 +40,17 @@ int main() {
         switch (choice) {
             case 1:
                 std::cout
-                        << "\nTo generate a new labyrinth, please enter its width x height (example 7 x 3).\nThe default is 5 x 5.\nInput : ";
+                        << "\nTo generate a new labyrinth, please enter its width x height (example 7 x 3).\nThe default is 5 x 5. A maze needs to have a width and/or height bigger than 1.\nInput : ";
                 std::getline(std::cin, input);
-                if (input.contains('-')) {
-                    std::cout << "\nIncorrect input of negative number(s)!\n";
-                    break;
+                while (input.contains('-')) {
+                    std::cout << "\nIncorrect input of negative number(s)!\nPlease enter a new width x height. : ";
+                    std::getline(std::cin, input);
                 }
                 inputVec = findWidthAndHeight(&input);
                 delete maze;
-                maze = new Maze(inputVec[0], inputVec[1]);
+                if (inputVec[0] == defaultWidth && inputVec[1] == defaultHeight) maze = new Maze();
+                else maze = new Maze(inputVec[0], inputVec[1]);
+
                 maze->display();
                 break;
             case 2:

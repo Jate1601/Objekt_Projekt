@@ -1,7 +1,3 @@
-//
-// Created by Dodo on 2024-04-15.
-//
-
 #ifndef OBJEKT_PROJEKT_DFSSOLVER_H
 #define OBJEKT_PROJEKT_DFSSOLVER_H
 
@@ -10,7 +6,7 @@
 
 class DFSSolver {
 public:
-    explicit DFSSolver(Maze *maze);
+    DFSSolver(Maze *maze);
 
     void solveDFS();
 

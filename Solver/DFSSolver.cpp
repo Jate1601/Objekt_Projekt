@@ -1,6 +1,8 @@
-//
-// Created by Dodo on 2024-04-15.
-//
+/**
+ * Written by Jazzley Termond, Jate1601.
+ * Written for course : DT019G/DT026G.
+ * Aiming for grade : C
+ */
 
 #include "DFSSolver.h"
 
@@ -11,7 +13,7 @@
 DFSSolver::DFSSolver(Maze *maze) : maze(maze) {}
 
 /**
- * The dfs method to solve a maze
+ * The DFS check to solve a maze. This calls the DFS method
  */
 void DFSSolver::solveDFS() {
     if (dfs(maze->getStartingNode())) {
@@ -46,5 +48,5 @@ void DFSSolver::displaySolution() const {
     for (const auto &node: solutionPath) {
         std::cout << "(" << node->x << ", " << node->y << ") ";
     }
-    std::cout << std::endl;
+    std::cout << "\n";
 }

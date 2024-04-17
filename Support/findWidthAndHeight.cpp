@@ -1,11 +1,13 @@
-//
-// Created by Dodo on 2024-03-28.
-//
+/**
+ * Written by Jazzley Termond, Jate1601.
+ * Written for course : DT019G/DT026G.
+ * Aiming for grade : C
+ */
 
 #include "findWidthAndHeight.h"
 
 /**
- * Find the defaultWidth and defaultHeight of the input-> Seperated by an x or a blank space->
+ * Find the width and height of the input. Seperated by an x or a blank space
  * @param input string entered by the user
  */
 std::vector<size_t> findWidthAndHeight(std::string *input) {
